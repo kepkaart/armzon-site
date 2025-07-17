@@ -1,0 +1,138 @@
+    :root {
+      --main-color: #ff8c00;
+      --bg-dark: #1a1a1a;
+      --bg-light: #2a2a2a;
+      --text-light: #ffffff;
+    }
+    
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: var(--bg-light);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    
+    h1 {
+      color: var(--main-color);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .calculator {
+      margin-bottom: 30px;
+    }
+    
+    .input-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    
+    input {
+      width: 100%;
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #444;
+      background-color: #333;
+      color: var(--text-light);
+      font-size: 16px;
+    }
+    
+    .result {
+      padding: 20px;
+      background-color: rgba(255, 140, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      margin: 25px 0;
+    }
+    
+    .result-value {
+      font-size: 24px;
+      color: var(--main-color);
+      font-weight: bold;
+    }
+    
+    .rate-info {
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .telegram-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: #0088cc;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+    
+    .telegram-btn:hover {
+      background: #0077bb;
+    }
+    
+    .telegram-btn i {
+      margin-right: 10px;
+    }
+  /* Стили для доната */
+.donate-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+.donate-container {
+  margin-top: 2rem; /* Дополнительный отступ сверху */
+  padding: 2rem;
+  position: relative; /* Для корректного позиционирования */
+  z-index: 1; /* Чтобы контент был над background элементами */
+}
+
+.secondary-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.cabinet-btn, .play-btn {
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  flex: 1;
+}
+
+.cabinet-btn {
+  background: #2a2a2a;
+  color: white;
+}
+
+.play-btn {
+  background: var(--main-color);
+  color: black;
+}
+
+.cabinet-btn:hover, .play-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}

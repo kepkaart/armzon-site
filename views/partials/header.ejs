@@ -1,0 +1,109 @@
+<header class="header_header__he2jd">
+  <div class="mobile_mobile__vdWLm mobile_hidden__OLCCc">
+    <img alt="backgroundMobile" loading="lazy" width="375" height="812" decoding="async" class="mobile_bg_mobile__11_5o" src="/img/mobile-bg.webp">
+    <div class="mobile_mobile_inner__RRnXj">
+      <nav>
+        <ul class="menu_column__t03Ll mobile_menu_mobile__AxJW3">
+          <li class="link_big_light__m5b7_ menu_border__pS1Wm">
+            <a href="/"><div></div>Главная</a>
+          </li>
+          <li class="link_big_light__m5b7_">
+            <a href="/donate"><div></div>Магазин</a>
+          </li>
+          <li class="link_big_light__m5b7_">
+            <a href="https://forum.arizona-rp.com/" target="_blank"><div></div>Форум</a>
+          </li>
+        </ul>
+      </nav>
+      <footer class="mobile_button_row__aULNT">
+        <button type="button" class="button_black__fCObR mobile_wide__coPYp">
+          <span>Кабинет →</span>
+        </button>
+        <button type="button" class="button_pink__HPFi2 mobile_wide__coPYp" id="mobilePlayButton">
+          <span>Начать игру</span>
+          <div class="button_icon__pfHI_">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Десктопная версия -->
+  <div class="container_container__ilA55">
+    <section class="header_content__p0Ex7">
+      <!-- Центральная кнопка (скрыта на десктопе) -->
+      <button type="button" class="button_pink__HPFi2 header_start_game__g_YhH" id="centerPlayButton">
+        <span>Начать игру</span>
+        <div class="button_icon__pfHI_">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </div>
+      </button>
+
+      <!-- Левая часть -->
+      <div class="header_content_left__0VUrM">
+        <a class="logo_logo__Pf8Jf" href="/">
+          <img alt="logo" loading="lazy" src="/img/logo.png">
+        </a>
+        <figure class="header_divider__h8mc_"></figure>
+        <nav>
+          <ul class="menu_row__bDrsS header_menu__ePhJ1">
+            <li class="link_light__lkSAH menu_border__pS1Wm">
+              <a href="/"><div></div>Главная</a>
+            </li>
+            <li class="link_light__lkSAH">
+              <a href="/donate"><div></div>Магазин</a>
+            </li>
+            <li class="link_light__lkSAH">
+              <a href="https://forum.armzon-rp.ru/" target="_blank"><div></div>Форум</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <button class="header_burger__2c_Qb">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+
+      <nav class="header_content_right__Sj_ss">
+        <button type="button" class="button_black__fCObR">
+          <span>Кабинет →</span>
+        </button>
+        <button type="button" class="button_pink__HPFi2 header_button__YAoZO" id="desktopPlayButton">
+          <span>Начать игру</span>
+          <div class="button_icon__pfHI_">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </button>
+      </nav>
+    </section>
+  </div>
+</header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  function scrollToDownload() {
+    const downloadSection = document.querySelector('.download-section');
+    if (downloadSection) {
+      downloadSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+  document.getElementById('desktopPlayButton')?.addEventListener('click', scrollToDownload);
+  document.getElementById('mobilePlayButton')?.addEventListener('click', scrollToDownload);
+  document.getElementById('centerPlayButton')?.addEventListener('click', scrollToDownload);
+  if (window.location.hash === '#download') {
+    setTimeout(scrollToDownload, 300);
+  }
+});
+</script>

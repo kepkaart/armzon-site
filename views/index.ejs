@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/mains.css">
+  <link rel="stylesheet" href="/css/servers.css">
+  <link rel="stylesheet" href="/css/features.css">
+  <link rel="stylesheet" href="/css/news.css">
+  <link rel="stylesheet" href="/css/download.css">
+</head>
+<body>
+  <%- include('partials/header', { currentPage: currentPage }) %>
+
+  <%- include('partials/main', { servers: servers }) %>
+   
+  <%- include('partials/servers', { 
+    servers: servers,
+    totalOnline: totalOnline 
+  }) %>
+  
+  <% if (typeof features !== 'undefined' && features.length) { %>
+    <%- include('partials/features', { features: features }) %>
+  <% } %>
+
+  <% if (typeof news !== 'undefined' && news.length) { %>
+    <%- include('partials/news', { news: news }) %>
+  <% } %>
+
+  <%- include('partials/download') %>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

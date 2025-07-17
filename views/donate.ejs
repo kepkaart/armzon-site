@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/donate.css">
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <%- include('partials/header', { currentPage: currentPage }) %>
+
+  <div class="container">
+  <h1>Пополнение донат-баланса</h1>
+  
+  <div class="calculator">
+    <div class="input-group">
+      <label for="amd-amount">Сумма в драмах (AMD):</label>
+      <input type="number" id="amd-amount" min="1" value="500">
+    </div>
+    
+    <div class="result">
+      <p>Вы получите:</p>
+      <div class="result-value" id="donat-result">100.00</div>
+      <p>донат-очков</p>
+    </div>
+    
+    <div class="rate-info">
+      Курс обмена: 1 донат-очко = <%= donatRate %> AMD
+    </div>
+  </div>
+  
+  <div class="donate-buttons">
+    <a href="https://t.me/<%= botUsername %>" class="telegram-btn" target="_blank">
+      <i class="fab fa-telegram"></i> Оплатить через Telegram
+    </a>
+    
+    <div class="secondary-buttons">
+      <a href="/cabinet" class="cabinet-btn">Кабинет →</a>
+      <a href="/play" class="play-btn">Начать игру ►</a>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const amdInput = document.getElementById('amd-amount');
+    const donatResult = document.getElementById('donat-result');
+    
+    function calculateDonat() {
+      const amdAmount = parseFloat(amdInput.value) || 0;
+      
+      fetch('/donate/calculate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: amdAmount
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        donatResult.textContent = data.points;
+      });
+    }
+    
+    amdInput.addEventListener('input', calculateDonat);
+    calculateDonat(); // Первоначальный расчет
+  });
+  </script>
+</body>
+</html>
