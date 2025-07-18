@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <%- include('../partials/head') %>
+    <title>Вход | Armzon RP</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+    <div class="container mt-5">
+        <% if (typeof error !== 'undefined') { %>
+            <div class="alert alert-danger"><%= error %></div>
+        <% } %>
+        
+        <form method="POST">
+            <!-- Форма входа -->
+        </form>
+    </div>
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
